@@ -1,5 +1,5 @@
 def solution(keymap, targets):
-    answer=[]
+    answer= []
     key_dict = {}
     for i in range(len(keymap)):
         for j in range(len(keymap[i])):
@@ -10,12 +10,12 @@ def solution(keymap, targets):
                 key_dict[char] = min(key_dict[char],(j + 1))
     
     for target in targets:
-        sum=0
+        result = 0
         for t in target:
             if t in key_dict:
-                sum += key_dict[t]
+                result += key_dict[t]
             else:
-                sum = -1
+                result = -1
                 break
-        answer.append(sum)
+        answer.append(result)
     return answer
