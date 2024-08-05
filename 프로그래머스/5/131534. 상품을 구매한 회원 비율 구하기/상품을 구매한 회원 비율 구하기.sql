@@ -6,9 +6,8 @@ SELECT
                                      FROM USER_INFO
                                      WHERE YEAR(JOINED) = '2021'), 1) PUCHASED_RATIO
 FROM ONLINE_SALE
-WHERE USER_ID IN( 
-    SELECT USER_ID 
-    FROM USER_INFO
-    WHERE YEAR(JOINED) = '2021')
+WHERE USER_ID IN( SELECT USER_ID 
+                  FROM USER_INFO
+                  WHERE YEAR(JOINED) = '2021') 
 GROUP BY MONTH
 ORDER BY 1 ASC, 2 ASC;
