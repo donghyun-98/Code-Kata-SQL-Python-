@@ -10,15 +10,14 @@ def solution(id_list, report, k):
             reported_id_dict[user_id].append(reported_id)
             report_count[reported_id] += 1
     
+    # 메일 발송 횟수
     answer = [0] * len(id_list)
-    banned_id = []
-    for key, value in report_count.items():
-        if value >= k:
-            banned_id.append(key)
     
-    for key, values in reported_id_dict.items():
-        for val in values:
-            if val in banned_id:
-                answer[id_list.index(key)] += 1
+    # 신고 결과 처리
+    for user_id in id_list:
+        for reported_id in reported_id_dict[user_id]:
+            if report_count[reported_id] >= k:
+                answer[id_list.index(user_id)] += 1
+            
     
     return answer
