@@ -1,6 +1,5 @@
 def solution(n,a,b):
     answer = 0
-    ans = True
     a_idx, b_idx = 0, 0
     
     # a, b가 같아질 때까지 반복
