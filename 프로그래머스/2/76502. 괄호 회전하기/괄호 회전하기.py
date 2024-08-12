@@ -12,8 +12,6 @@ def solution(s):
                     stack.pop()
                 else:
                     return False  # 짝이 맞지 않으면 올바른 괄호 문자열이 아님
-            else:
-                return False  # 예상치 못한 문자가 있으면 올바른 괄호 문자열이 아님
 
         return len(stack) == 0  # 스택이 비어있으면 모든 괄호가 짝이 맞은 것
 
