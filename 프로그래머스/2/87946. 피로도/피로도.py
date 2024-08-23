@@ -2,10 +2,6 @@ from itertools import permutations
 
 def solution(k, dungeons):
     answer = 0
-    from itertools import permutations
-
-def solution(k, dungeons):
-    answer = 0
     
     # 모든 던전 탐험 순서를 permutations 함수를 이용해 생성
     for p in permutations(dungeons, len(dungeons)):
@@ -20,17 +16,6 @@ def solution(k, dungeons):
                 cnt += 1  #  탐험한 던전 수 증가
         
         # 현재 순열에서 탐험한 던전 수와 지금까지 계산된 최대 던전 수를 비교해 더 큰 값을 저장
-        answer = max(answer, cnt)
-    
-    return answer
-    for p in permutations(dungeons, len(dungeons)):
-        tmp = k
-        cnt = 0
-        
-        for min_required_stamina, stamina_cost in p:
-            if tmp >= min_required_stamina:
-                tmp -= stamina_cost
-                cnt += 1
         answer = max(answer, cnt)
     
     return answer
